@@ -26,6 +26,12 @@
 git clone https://github.com/Syaiful-Maulana/TestBackend-EIGEN.git
 ```
 
+### NPM Install.
+
+```
+npm install
+```
+
 ### cp .env.example env yang di dalam folder library
 
 ```
