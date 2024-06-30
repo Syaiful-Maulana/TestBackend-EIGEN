@@ -1,0 +1,833 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Technical Test",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1/library",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/books/all": {
+      "get": {
+        "summary": "Get All Book",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetAllBook",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/success"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 200,
+                "message": "All books retrieved successfully.",
+                "data": [
+                  {
+                    "id": 1,
+                    "code": "JK-45",
+                    "title": "Harry Potter",
+                    "author": "J.K Rowling",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T10:36:49.000Z"
+                  },
+                  {
+                    "id": 2,
+                    "code": "SHR-1",
+                    "title": "A Study in Scarlet",
+                    "author": "Arthur Conan Doyle",
+                    "stock": 0,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T10:37:02.000Z"
+                  },
+                  {
+                    "id": 3,
+                    "code": "TW-11",
+                    "title": "Twilight",
+                    "author": "Stephenie Meyer",
+                    "stock": 0,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T09:45:39.000Z"
+                  },
+                  {
+                    "id": 4,
+                    "code": "HOB-83",
+                    "title": "The Hobbit, or There and Back Again",
+                    "author": "J.R.R. Tolkien",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T09:45:30.000Z"
+                  },
+                  {
+                    "id": 5,
+                    "code": "NRN-7",
+                    "title": "The Lion, the Witch and the Wardrobe",
+                    "author": "C.S. Lewis",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T09:45:30.000Z"
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "920"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"398-ircX5DgLByvMwfu8oaZsQFk4Ufg\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:49:32 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/members": {
+      "get": {
+        "summary": "Get All Member",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetAllMember",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/success1"
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "804"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"324-K1scy6orYKkKP7Ohviu6dGua0OY\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:49:43 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books": {
+      "get": {
+        "summary": "Get Available Book",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetAvailableBook",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/success"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 200,
+                "message": "Books retrieved successfully.",
+                "data": [
+                  {
+                    "id": 1,
+                    "code": "JK-45",
+                    "title": "Harry Potter",
+                    "author": "J.K Rowling",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T10:36:49.000Z"
+                  },
+                  {
+                    "id": 4,
+                    "code": "HOB-83",
+                    "title": "The Hobbit, or There and Back Again",
+                    "author": "J.R.R. Tolkien",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T09:45:30.000Z"
+                  },
+                  {
+                    "id": 5,
+                    "code": "NRN-7",
+                    "title": "The Lion, the Witch and the Wardrobe",
+                    "author": "C.S. Lewis",
+                    "stock": 1,
+                    "createdAt": "2024-06-30T09:45:30.000Z",
+                    "updatedAt": "2024-06-30T09:45:30.000Z"
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "587"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"24b-i93zUF5NokOsNYP+dMRNp6X7tx0\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:49:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/borrow": {
+      "post": {
+        "summary": "Borrow Books",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "BorrowBooks",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BorrowBooksRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/success3"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 200,
+                "message": "Book borrowed successfully.",
+                "data": null
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "64"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"40-ivNqejfFtU+NOQEEaesydxQB250\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:37:02 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/error1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 500,
+                "error": "Member has reached maximum borrow limit."
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "63"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3f-Q3qa33yxYy70B//ILWlf6sH6mgM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:50:04 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/return": {
+      "post": {
+        "summary": "Return Book",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ReturnBook",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ReturnBookRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/success3"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 200,
+                "message": "Book returned successfully.",
+                "data": null
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "64"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"40-oru/lddP+DKYupaXIjwpg0KR8lU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:50:40 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/error1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "code": 500,
+                "error": "Member has not borrowed this book."
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "57"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"39-Ev+Kuu2PeK/2Oqop27bv89lSz+U\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 30 Jun 2024 10:50:31 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "success": {
+      "title": "success",
+      "example": {
+        "code": 200,
+        "message": "All books retrieved successfully.",
+        "data": [
+          {
+            "id": 1,
+            "code": "JK-45",
+            "title": "Harry Potter",
+            "author": "J.K Rowling",
+            "stock": 1,
+            "createdAt": "2024-06-30T09:45:30.000Z",
+            "updatedAt": "2024-06-30T10:36:49.000Z"
+          },
+          {
+            "id": 2,
+            "code": "SHR-1",
+            "title": "A Study in Scarlet",
+            "author": "Arthur Conan Doyle",
+            "stock": 0,
+            "createdAt": "2024-06-30T09:45:30.000Z",
+            "updatedAt": "2024-06-30T10:37:02.000Z"
+          },
+          {
+            "id": 3,
+            "code": "TW-11",
+            "title": "Twilight",
+            "author": "Stephenie Meyer",
+            "stock": 0,
+            "createdAt": "2024-06-30T09:45:30.000Z",
+            "updatedAt": "2024-06-30T09:45:39.000Z"
+          },
+          {
+            "id": 4,
+            "code": "HOB-83",
+            "title": "The Hobbit, or There and Back Again",
+            "author": "J.R.R. Tolkien",
+            "stock": 1,
+            "createdAt": "2024-06-30T09:45:30.000Z",
+            "updatedAt": "2024-06-30T09:45:30.000Z"
+          },
+          {
+            "id": 5,
+            "code": "NRN-7",
+            "title": "The Lion, the Witch and the Wardrobe",
+            "author": "C.S. Lewis",
+            "stock": 1,
+            "createdAt": "2024-06-30T09:45:30.000Z",
+            "updatedAt": "2024-06-30T09:45:30.000Z"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "Datum": {
+      "title": "Datum",
+      "example": {
+        "id": 1,
+        "code": "JK-45",
+        "title": "Harry Potter",
+        "author": "J.K Rowling",
+        "stock": 1,
+        "createdAt": "2024-06-30T09:45:30.000Z",
+        "updatedAt": "2024-06-30T10:36:49.000Z"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "title",
+        "author",
+        "stock",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "success1": {
+      "title": "success1",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum1"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "Datum1": {
+      "title": "Datum1",
+      "example": {
+        "memberId": 1,
+        "code": "M001",
+        "name": "Angga",
+        "penalty_until": null,
+        "borrow": []
+      },
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "penalty_until": {
+          "type": "string"
+        },
+        "borrow": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Borrow"
+          }
+        }
+      },
+      "required": [
+        "memberId",
+        "code",
+        "name",
+        "penalty_until",
+        "borrow"
+      ]
+    },
+    "Borrow": {
+      "title": "Borrow",
+      "type": "object",
+      "properties": {
+        "borrow_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "book_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "borrowed_at": {
+          "type": "string"
+        },
+        "returned_at": {
+          "type": "string"
+        },
+        "book": {
+          "$ref": "#/definitions/Book"
+        }
+      }
+    },
+    "Book": {
+      "title": "Book",
+      "example": {
+        "code": "TW-11",
+        "title": "Twilight",
+        "author": "Stephenie Meyer"
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "title",
+        "author"
+      ]
+    },
+    "Borrow1": {
+      "title": "Borrow1",
+      "example": {
+        "borrow_id": 1,
+        "book_id": 3,
+        "borrowed_at": "2024-06-30T09:45:39.000Z",
+        "returned_at": null,
+        "book": {
+          "code": "TW-11",
+          "title": "Twilight",
+          "author": "Stephenie Meyer"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "borrow_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "book_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "borrowed_at": {
+          "type": "string"
+        },
+        "returned_at": {
+          "type": "string"
+        },
+        "book": {
+          "$ref": "#/definitions/Book"
+        }
+      },
+      "required": [
+        "borrow_id",
+        "book_id",
+        "borrowed_at",
+        "returned_at",
+        "book"
+      ]
+    },
+    "BorrowBooksRequest": {
+      "title": "BorrowBooksRequest",
+      "example": {
+        "memberId": 3,
+        "bookId": 2
+      },
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bookId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "memberId",
+        "bookId"
+      ]
+    },
+    "success3": {
+      "title": "success3",
+      "example": {
+        "code": 200,
+        "message": "Book borrowed successfully.",
+        "data": null
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "error1": {
+      "title": "error1",
+      "example": {
+        "code": 500,
+        "error": "Member has reached maximum borrow limit."
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "error": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "error"
+      ]
+    },
+    "ReturnBookRequest": {
+      "title": "ReturnBookRequest",
+      "example": {
+        "memberId": 3,
+        "bookId": 1
+      },
+      "type": "object",
+      "properties": {
+        "memberId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bookId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "memberId",
+        "bookId"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
