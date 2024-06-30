@@ -23,7 +23,7 @@
 ### Clone github.
 
 ```
-git clone add origin https://github.com/Syaiful-Maulana/TestBackend-EIGEN.git
+git clone https://github.com/Syaiful-Maulana/TestBackend-EIGEN.git
 ```
 
 ### cp .env.example env yang di dalam folder library
